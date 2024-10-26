@@ -1,6 +1,26 @@
 const express = require("express");
+const cors = require('cors')
 const app = express();
 require("dotenv").config();
+
+const corsOptions = {
+    origin: '*'
+}
+
+app.use(cors(corsOptions))
+
+// const cors = require("cors");
+// const app = express();
+// app.use(
+//   cors({
+//     allowedHeaders: ["authorization", "Content-Type"], // you can change the headers
+//     exposedHeaders: ["authorization"], // you can change the headers
+//     origin: "*",
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     preflightContinue: false
+//   });
+// )
+
 // parse requests of content-type -
 let dbConnect = require("./dbConnect")
 

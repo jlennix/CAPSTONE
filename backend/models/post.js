@@ -9,4 +9,6 @@ const useSchema = new Schema({
   updatedAt: { type: Date, default: Date.now },
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'user'}
 });
+
+//skip image for now has its own schema'collection' gridfs
 module.exports = mongoose.model("post", useSchema);

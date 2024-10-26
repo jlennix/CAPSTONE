@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Runner's Hub</title>
+  <h1>Runner's Hub</h1>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #e2f;
+    }
+    .card {
+      padding: 10px;
+      border: 1px solid black;
+      margin-bottom: 10px;
+    }
+    .card-title {
+      font-weight: 600;
+      font-size: 3em;
+      padding: 0 0 10px 0;
+    }
+    .card-description {
+      font-weight: 400;
+      font-size: 2em; 
+    }
+  </style>
+   <link rel="stylesheet" href="mini.css">
+</head>
+<body>
+  <template id="card-template">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-id"></div>
+        <div class="card-title"></div>
+        <div class="card-text"></div>
+      </div>
+      <button onclick="handleEditCard()">Edit</button>
+      <button onclick="handleDeleteCard()">Delete</button>
+      <button class="reply">Comment</button>
+    </div>
+  </template>
+  <a href="/account.html"><h2>Account</h2></a>
+<div class="container">
+  <label for="title"><b>Title:</b></label>
+  <input
+  id="title"
+  type="text"
+  placeholder="Enter title"
+  name="title"
+  required
+  />
+
+  <label for="text"><b>Text:</b></label>
+  <input
+  id="text"
+  type="text"
+  placeholder="Enter text"
+  name="text"
+  required
+  />
+
+  <button onclick="handlePost()">Post</button>
+</div>
+
+  <div id="card-list"></div>
+
+  <script>
+
+    //new
+    const replyButtons = document.querySelectorAll('.reply');
+        
+        replyButtons.forEach(item => {
+            item.addEventListener('click', () => {
+                item.parentElement.insertAdjacentHTML('beforeend', `
+                    <input type="text" placeholder="write your reply" />
+                `);
+            });
+        })
+
+    function handleEditCard() {
+    const title = document.getElementById('title').value
+    const text = document.getElementById('text').value}
+  
+  function handlePost() {
+    const title = document.getElementById('title').value
+    const text = document.getElementById('text').value
+
+    console.log('dashboard.html - handlePost:', title, text)
+
+    fetch('http://localhost:3000/api/cards/post', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        title: title,
+        text: text
+      })
+    })
+    .then(response => response.json())
+    .then(json => {
+      console.log('dashboard.html -handlePost response:', json)
+
+      const data = json.result
+
+      //clear cards
+      document.querySelector('#card-list')
+        .innerHTML =""
+
+      data.forEach((element)=> {
+        addCard(element.title, element.text, element.id)
+      })
+    })
+  }
+
+    function addCard(title, text, id) {
+      const template = document.getElementById('card-template')
+      .content.cloneNode(true)
+
+      template.querySelector('.card-title').innerText = title;
+      template.querySelector('.card-text').innerText = text;
+      template.querySelector('.card-id').innerText = id;
+
+      document.querySelector('#card-list')
+        .appendChild(template)
+    }
+
+    // data.forEach((element) => {
+    //   addCard(element.title, element.text)
+    // })
+
+    fetch('http://localhost:3000/api/cards')
+    .then(response => response.json())
+    .then(json => {
+      console.log('Dashboard.html', json)
+      const data =json.result
+     data.forEach((element) => {
+      addCard(element.title, element.text, element.id)
+    })
+    })
+  </script>
+</body>
+</html>
