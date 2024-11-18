@@ -1,0 +1,14 @@
+body {
+    background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3Vwd2s2MTYzNzc1Ny13aWtpbWVkaWEtaW1hZ2Uta293Yjl6dWsuanBn.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 100vh;
+}
+
+div {
+    text-align: center;
+}
+
+input {
+    text-align: center;
+}

@@ -16,37 +16,51 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log In</title>
-     <link rel="stylesheet" href="mini.css">
+    <title>LogIN</title>
   </head>
   <body>
-    <h1>Log In</h1>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  
+   <div>
+    <button type="submit" onclick="handleSubmit()"><b>Login</b></button>
+    <span id="responseMessage"></span>
+</div>
     <div class="container">
-      <label for="email"><b>Email</b></label>
+      <!-- <label for="email"><b>Email</b></label> -->
       <input
         id="email"
         type="email"
-        placeholder="Enter Email"
+        placeholder="Email"
         name="email"
         required
       />
-
-      <label for="password"><b>Password</b></label>
+</div>
+<div>
+      <!-- <label for="password"><b>Password</b></label> -->
       <input
         id="password"
         type="password"
-        placeholder="Enter Password"
+        placeholder="Password"
         name="password"
         required
       />
+</div>
 
+<div>
+  <button type="submit" a href="create.html"><b>Create an Account</b></button>
+  
+</div>
+<!-- <div>
       <button type="submit" onclick="handleSubmit()">Login</button>
       <span id="responseMessage"></span>
+</div> -->
 
-
-
+<!-- 
       <h1>Create Account</h1>
       <div class="container">
         <label for="email"><b>Email</b></label>
@@ -76,47 +90,57 @@
           required
         />
   
-        <button type="submit" onclick="handleSubmit2()">Create Account</button>
+        <button type="submit" onclick="handleSubmit2()">Create Account</button> -->
         <!-- <span id="responseMessage"></span> -->
-    </div>
+    
     <script>
 
+
+
+//add back if doesn't work
 //for create an account 
 
-function handleSubmit2() {
+// function handleSubmit2() {
 
   
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
-  var milegoal = document.getElementById('milegoal').value;
+//   const email = document.getElementById('email').value;
+//   const password = document.getElementById('password').value;
+//   const milegoal = document.getElementById('milegoal').value;
 
-        // get the data from the form
-        console.log('here')
-        fetch('http://localhost:8080/api/users', {
-            method: "POST",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                email: email,
-                password: password, 
-                milegoal: milegoal,
-                userId: 1
-            })
-        })}
+//         // get the data from the form
+//         console.log('email:', email, 'password:', password, "milegoal:", milegoal)
+//         fetch('http://localhost:8080/api/users', {
+//             method: "POST",
+//             headers: {
+//                 Accept: "application/json",
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify({
+//                 email: email,
+//                 password: password, 
+//                 milegoal: milegoal
+                
+//             })
+//         })}
+//ends here
 
-      //   const email = document.getElementById("email").value;
-      //   const password = document.getElementById("password").value;
-      //   console.log(
-      //     "login.html - handleSubmit: email - password",
-      //     email,
-      //     password
-      //   );
+
+//maybe add below
+
+
+        // const email = document.getElementById("email").value;
+        // const password = document.getElementById("password").value;
+        // console.log(
+        //   "login.html - handleSubmit: email - password",
+        //   email,
+        //   password
+        // );
       // }
 
 
       function handleSubmit() {
+
+        // replace
         // get the data from the form
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
@@ -130,7 +154,7 @@ function handleSubmit2() {
         const responseMessage = document.getElementById("responseMessage");
 
         // send the data to api through a POST request
-        fetch("http://localhost:8080/api/users/:id", {
+        fetch("http://localhost:8080/api/users", {
           method: "POST",
           // ensure headers are set correctly
           headers: {
@@ -142,6 +166,27 @@ function handleSubmit2() {
             email: email,
             password: password,
           }),
+//replace
+
+// const email = document.getElementById('email').value;
+//   const password = document.getElementById('password').value;
+//   const milegoal = document.getElementById('milegoal').value;
+
+//         // get the data from the form
+//         console.log('email:', email, 'password:', password, "milegoal:", milegoal)
+//         fetch('http://localhost:8080/api/users', {
+//             method: "POST",
+//             headers: {
+//                 Accept: "application/json",
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify({
+//                 email: email,
+//                 password: password, 
+//                 milegoal: milegoal
+                
+//             }),
+
         }).then((response) => {
           // check the response status
           if (response.status === 200) {
