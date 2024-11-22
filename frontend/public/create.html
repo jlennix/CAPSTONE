@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="create.css">
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
 
-
+<h1>Runner's High</h1>
+<br>
+<br>
 <h1>Create Account</h1>
+
+<!-- //new  -->
+<form id="contactForm" action="contact.php" method="POST">
+
 <div class="container">
-  <label for="email"><b>Email</b></label>
+  
   <input
     id="email"
-    type="email"
+    type="text"
     placeholder="Enter Email"
     name="email"
     required
   />
-
-  <label for="password"><b>Password</b></label>
+  <br>
+  <br>
+ 
   <input
     id="password"
     type="password"
@@ -26,8 +34,11 @@
     name="password"
     required
   />
+  <br>
+  <br>
+  <label for="milegoal"><h1>Mile Goal for the Week</h1></label>
+  
 
-  <label for="milegoal"><b>Mile Goal</b></label>
   <input
     id="milegoal"
     type="mile"
@@ -35,10 +46,13 @@
     name="milegoal"
     required
   />
-
-  <button type="submit" onclick="handleSubmit2()">Create Account</button>
-  <!-- <span id="responseMessage"></span> -->
+  <br>
+  <br>
 </div>
+  <button type="submit" onclick="handleSubmit2()" a href="index.html">OK</button>
+  <!-- <span id="responseMessage"></span> -->
+
+</form>
 <script>
 
 //for create an account 
@@ -65,6 +79,26 @@ const milegoal = document.getElementById('milegoal').value;
           
       })
   })}
+
+
+  //new stuff below
+
+//   window.onload = function() {
+
+// // Check for LocalStorage support.
+// if (localStorage) {
+
+//   // Add an event listener for form submissions
+//   document.getElementById('contactForm').addEventListener('submit', function() {
+//     // Get the value of the name field.
+//     const email = document.getElementById('email').value;
+//     const password = document.getElementById('password').value;
+//     // Save the name in localStorage.
+//     localStorage.setItem('email', email);
+//     localStorage.setItem('password', password);
+//   });
+// }
+//   }
 
 </script>
   </body>

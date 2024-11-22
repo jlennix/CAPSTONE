@@ -27,7 +27,7 @@
     <script type="module" src="/src/main.jsx"></script>
   
    <div>
-    <button type="submit" onclick="handleSubmit()"><b>Login</b></button>
+    <button type="submit" onclick="handleSubmit()" a href="dashboard.html"><b>Login</b></button>
     <span id="responseMessage"></span>
 </div>
     <div class="container">
@@ -52,9 +52,14 @@
 </div>
 
 <div>
-  <button type="submit" a href="create.html"><b>Create an Account</b></button>
+  <button type="submit" a href="/create.html"><b>Create an Account</b></button>
   
 </div>
+
+<div.b><h1>EVENTS</h1></div.b>
+
+
+<div.c><h1>ARTICLES</h1></div.c>
 <!-- <div>
       <button type="submit" onclick="handleSubmit()">Login</button>
       <span id="responseMessage"></span>
@@ -154,7 +159,8 @@
         const responseMessage = document.getElementById("responseMessage");
 
         // send the data to api through a POST request
-        fetch("http://localhost:8080/api/users", {
+        //maybe try 8080/auth/loginUser or change author routes to match
+        fetch("http://localhost:8080/auth/loginUser", {
           method: "POST",
           // ensure headers are set correctly
           headers: {

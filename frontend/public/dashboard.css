@@ -1,0 +1,32 @@
+body {
+    background-image: url('https://media.istockphoto.com/id/908286514/photo/outdoor-all-weather-running-track-in-london-for-background-use.jpg?s=612x612&w=0&k=20&c=Pc8zt0fDPaWNYgoJChTJiuZhev187PaPG5p4MzpUcO4=');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 100vh;
+}
+
+div {
+    text-align: center;
+}
+
+input {
+    text-align: center;
+}
+
+div.b {
+    display: flex;
+    justify-content: flex-start;
+  } 
+
+  div.c {
+   position: fixed;
+   left: 50;
+  } 
+
+  h1 {
+    text-align: center;
+  }
+
+  button {
+   margin-left: 800px;
+  }

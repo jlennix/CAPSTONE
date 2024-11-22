@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3Vwd2s2MTYzNzc1Ny13aWtpbWVkaWEtaW1hZ2Uta293Yjl6dWsuanBn.jpg');
+    background-image: url('https://d2exd72xrrp1s7.cloudfront.net/www/000/1k3/1m/1mwpepyy59bqfe9auvugfoe1x34fmowq6-uhi8064817/0?width=768&height=576&crop=true');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     min-height: 100vh;
@@ -22,3 +22,11 @@ div.b {
    position: fixed;
    left: 50;
   } 
+
+  h1 {
+    text-align: center;
+  }
+
+  button {
+   margin-left: 800px;
+  }
