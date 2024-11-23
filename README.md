@@ -17,7 +17,8 @@ Installation:
 3. Change git remote url to avoid accidental pushes to base project
    git remote set-url origin github_username/repo_name
    git remote -v
-
+4. Run npm run dev for front end
+5. Run npm run dev for back end
 Usage:
 
 Get Request- http://localhost:8080/api/users
