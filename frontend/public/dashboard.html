@@ -88,7 +88,7 @@
 
     console.log('dashboard.html - handlePost:', title, text)
 
-    fetch('http://localhost:3000/api/cards/post', {
+    fetch('http://localhost:8080/api/cards/post', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -131,7 +131,7 @@
     //   addCard(element.title, element.text)
     // })
 
-    fetch('http://localhost:3000/api/cards')
+    fetch('http://localhost:8080/api/cards')
     .then(response => response.json())
     .then(json => {
       console.log('Dashboard.html', json)

@@ -13,12 +13,17 @@ input {
     text-align: center;
 }
 
-div.b {
-    display: flex;
-    justify-content: flex-start;
-  } 
+h1 {
+    text-align: center;
+}
 
-  div.c {
-   position: fixed;
-   left: 50;
-  } 
+p {
+    text-emphasis-color: white;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
